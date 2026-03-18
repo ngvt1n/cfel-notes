@@ -9,6 +9,7 @@ env:
   QUARTZ_REPO: "quartz"
   VAULT_REPO: "notes"
   PUBLIC_ATTACHMENTS_FOLDER: "assets"
+  YOUR_NOTES_FOLDER: "notes"
 
 jobs:
   update_vault_content:
