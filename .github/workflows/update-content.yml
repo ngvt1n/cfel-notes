@@ -20,18 +20,18 @@ jobs:
           repository: "ngvt1n/es-research-notes-raw"
           ref: trunk
           token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
-          path: "$VAULT_REPO"
+          path: "${{ env.VAULT_REPO }}"
 
       - name: Clone this repo
         uses: actions/checkout@v4.2.2
         with:
           ref: tinv4
           token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
-          path: "$QUARTZ_REPO"
+          path: "${{ env.QUARTZ_REPO }}"
 
       - name: Delete everything in content/ except index.md
         run: |
-          cd "$QUARTZ_REPO"
+          cd "${{ env.QUARTZ_REPO }}"
           mv content/index.md .
           rm -rf content
           mkdir content
@@ -39,23 +39,23 @@ jobs:
 
       - name: Copy over media and files
         run: |
-          cd "$VAULT_REPO"
+          cd "${{ env.VAULT_REPO }}"
           echo "----- Copying over public-only attachments"
-          cp -vr "$PUBLIC_ATTACHMENTS_FOLDER" ../"$QUARTZ_REPO"/content
+          cp -vr "${{ env.PUBLIC_ATTACHMENTS_FOLDER }}" ../"${{ env.QUARTZ_REPO }}"/content
           echo -e "\n----- Copying over Markdown files"
-          cp -vr "$YOUR_NOTES_FOLDER"/. ../"$QUARTZ_REPO"/content
-          cd ../"$QUARTZ_REPO"/content
-          mv "$PUBLIC_ATTACHMENTS_FOLDER" _files
+          cp -vr "${{ env.YOUR_NOTES_FOLDER }}"/. ../"${{ env.QUARTZ_REPO }}"/content
+          cd ../"${{ env.QUARTZ_REPO }}"/content
+          mv "${{ env.PUBLIC_ATTACHMENTS_FOLDER }}" _files
         # ^ Include this last line if you want to rename your public folder
 
       - name: Print out current state of filesystem
         run: |
-          echo "----- Folder: $QUARTZ_REPO/"
-          cd "$QUARTZ_REPO"
+          echo "----- Folder: ${{ env.QUARTZ_REPO }}/"
+          cd "${{ env.QUARTZ_REPO }}"
           ls | cat
-          echo -e "\n----- Folder: $QUARTZ_REPO/content/"
+          echo -e "\n----- Folder: ${{ env.QUARTZ_REPO }}/content/"
           ls content | cat
-          echo -e "\n----- Folder: $QUARTZ_REPO/content/_files"
+          echo -e "\n----- Folder: ${{ env.QUARTZ_REPO }}/content/_files"
           ls content/_files | cat
         # ^ NOTE: this uses the renamed folder name from above
 
@@ -66,7 +66,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd "$QUARTZ_REPO"
+          cd "${{ env.QUARTZ_REPO }}"
           bun i
 
       - name: Setup Git config (user and email), necessary for commits
@@ -76,5 +76,5 @@ jobs:
 
       - name: Sync Quartz repo
         run: |
-          cd "$QUARTZ_REPO"
+          cd "${{ env.QUARTZ_REPO }}"
           bun quartz sync
