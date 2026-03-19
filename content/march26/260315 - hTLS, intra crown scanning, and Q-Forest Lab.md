@@ -1,4 +1,4 @@
-# hTLS - high TLS
+## hTLS - high TLS
 - hTLS is a method introduced in Griese et. al 2026 that involves mounting the scanner on an 8m tripod to capture more detail of crown
 - TODO: which forest did the study did this in? how tall are the trees? what other forest structure elements do they have? 
 - NOTE: this study used a Leica <...> scanner, which is 9x lighter than our VZ-400i 
