@@ -27,15 +27,15 @@ const config: QuartzConfig = {
       },
       colors: {
         lightMode: {
-          light: "#faf8f8",
-          lightgray: "#e5e5e5",
-          gray: "#b8b8b8",
-          darkgray: "#4e4e4e",
-          dark: "#2b2b2b",
-          secondary: "#284b63",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#fff23688",
+          light: "#f3faf4",            // pale greenish background
+          lightgray: "#d6e5d8",        // soft green-gray for borders
+          gray: "#8fbf9f",             // muted green for links/borders
+          darkgray: "#3a5a40",         // deep green for body text
+          dark: "#1b4332",             // very dark green for headers/icons
+          secondary: "#40916c",        // vibrant green for links/current node
+          tertiary: "#74c69d",         // lighter green for hovers/visited
+          highlight: "rgba(64, 145, 108, 0.15)", // subtle green highlight
+          textHighlight: "#d8f3dc",    // light green for markdown highlights
         },
         darkMode: {
           light: "#161618",
