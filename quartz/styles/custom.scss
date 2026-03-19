@@ -1,12 +1,7 @@
 @use "./base.scss";
 
-img {
-  max-width: 80%;
-  border-radius: 0px;
-  margin: 1rem 0;
-  content-visibility: auto;
-}
-
 .page > #quartz-body {
   justify-content: center;
+  padding-right: 1em;
+  margin-right: 2em;
 }
