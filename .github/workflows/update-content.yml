@@ -72,8 +72,8 @@ jobs:
 
       - name: Setup Git config (user and email), necessary for commits
         run: |
-          git config --global user.name "Tin Nguyen (quartz repo)"
-          git config --global user.email "ngvt1n@github.com"
+          git config --global user.name "quartz-bot@ngvt1n"
+          git config --global user.email "quartz-bot@ngvt1n"
 
       - name: Sync Quartz repo
         run: |
