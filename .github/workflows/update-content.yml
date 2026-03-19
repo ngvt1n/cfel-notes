@@ -46,8 +46,6 @@ jobs:
           echo -e "\n----- Copying over Markdown files"
           cp -vr "${{ env.YOUR_NOTES_FOLDER }}"/. ../"${{ env.QUARTZ_REPO }}"/content
           cd ../"${{ env.QUARTZ_REPO }}"/content
-          mv "${{ env.PUBLIC_ATTACHMENTS_FOLDER }}" _files
-        # ^ Include this last line if you want to rename your public folder
 
       - name: Print out current state of filesystem
         run: |
@@ -56,8 +54,7 @@ jobs:
           ls | cat
           echo -e "\n----- Folder: ${{ env.QUARTZ_REPO }}/content/"
           ls content | cat
-          echo -e "\n----- Folder: ${{ env.QUARTZ_REPO }}/content/_files"
-          ls content/_files | cat
+          ls content/${{ env.PUBLIC_ATTACHMENTS_FOLDER }} | cat
         # ^ NOTE: this uses the renamed folder name from above
 
       - name: Install Bun just to run literally two commands
