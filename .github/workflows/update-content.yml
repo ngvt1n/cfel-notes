@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clone ngvt1n/es-research-notes-raw
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v6
         with:
           repository: "ngvt1n/es-research-notes-raw"
           ref: trunk
@@ -24,7 +24,7 @@ jobs:
           path: "${{ env.VAULT_REPO }}"
 
       - name: Clone this repo
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v6
         with:
           ref: tinv4
           token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
@@ -58,7 +58,7 @@ jobs:
         # ^ NOTE: this uses the renamed folder name from above
 
       - name: Install Bun just to run literally two commands
-        uses: oven-sh/setup-bun@v2.0.1
+        uses: oven-sh/setup-bun@v2.2.0
         with:
           bun-version: latest
 
