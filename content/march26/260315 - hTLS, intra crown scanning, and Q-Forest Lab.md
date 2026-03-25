@@ -5,7 +5,7 @@
 ![[assets/Pasted image 20260316001817.png]]
 - However, their results are consistent with another study using our VZ-400i, see below
 
-## intra crown scanning 
+## [Griese et. al 2026](https://doi.org/10.1093/aob/mcab051) intra crown scanning 
 - introduces canopy laser scanning (CLS): "We lifted a high-end laser scanner into the canopy of six large, old trees by using scaffolding or climbers."
 - WHERE: tropical rainforests in Colombia, Brazil and Peru. Tasmania giant eucalypt forests.
 - HOW: using ours lasers! 
